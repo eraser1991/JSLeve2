@@ -6,14 +6,14 @@ const products = [
 ];
 
 const renderProduct = (title, price) => {
-    return `<div class="product-item">
+    return `<div class="products-item">
                 <h3>${title}</h3>
                 <p>${price}</p>
                 <button class="buy-btn">Купить</button>
             </div>`
 };
 const renderPage = list => {
-    const productsList = list.map(item => renderProduct(item.title, item.price));
+    const productsList = list.map(item => renderProduct(item.title, item.price)).join('');
     console.log(productsList);
     document.querySelector('.products').innerHTML = productsList;
 };
