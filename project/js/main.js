@@ -61,24 +61,10 @@ class ProductItem{
 let list = new ProductsList();
 
 class Basket {
-    constructor(container = '.basket'){
-        this.container = container;
-        this.goods = [];
-        this.allProducts = [];
-        this._getProducts()
-            .then(data => {
-                this.goods = [...data];
-                this.addGoods()
-            });
-    }
     addGoods() {
-        let buy = document.getElementsByClassName("buy-btn");
-        buy.onclick = () => {
-            const block = document.querySelector(this.container);
-            let elemBask = new elemBasket(product);
-            this.allProducts.push(elemBask);
-            block.insertAdjacentHTML('beforeend',elemBask.render())
-        }
+        let bask = document.querySelector('.basket');
+        let add = new elemBasket();
+        bask.insertAdjacentHTML('beforeend',add.render());
 
     }
     removeGoods() {
@@ -88,19 +74,15 @@ class Basket {
 
     }
     render(){
-        let basketBtn = document.getElementsByClassName("btn-cart");
-        basketBtn.onclick = () => {
-            let visible = document.getElementsByClassName("basket");
-            visible.style.visibiliti = 'visible';
-     }
-
+        let visible = document.querySelector(".basket");
+            visible.style = 'visibility: visible;';
     }
 }
 
 class elemBasket {
-    constructor(product){
-        this.title = product.product_name;
-        this.price = product.price;
+    constructor(itemProd = document.querySelector('.products-item')){
+        this.title = itemProd.getElementsByTagName('h3');
+        this.price = itemProd.getElementsByTagName('p');
     }
     render(){
         return `<div class="basket-item">
@@ -110,5 +92,10 @@ class elemBasket {
             </div>`
     }
 }
-
 let basket = new Basket();
+let basketBtn = document.querySelector(".btn-cart");
+ basketBtn.onclick = () => {basket.render();}
+ let buyBtn = document.querySelector('.buy-btn');
+ buyBtn.onclick = () => {
+     basket.addGoods();
+ }
