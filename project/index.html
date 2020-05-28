@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="menu">
@@ -13,11 +14,11 @@
             <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
             <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
         </ul>
-        <button class="btn-cart" type="button">Корзина</button>
-        
+        <div class="cart">
+            <button class="btn-cart" type="button">Корзина</button>
+            <div class="cart-block invisible"></div>
     </header>
     <main>
-        <div class="basket"></div>
         <div class="products"></div>
     </main>
     <script src="js/main.js"></script>
