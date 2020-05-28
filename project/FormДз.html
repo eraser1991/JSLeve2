@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" style="width: 600px; background-color: bisque; border-radius: 15px; display: flex; flex-direction: column; height: 200px; justify-content: space-around; align-items: center;">
+        <input type="text" style="width: 400px;" placeholder="Name" class="name">
+        <input type="text" style="width: 400px;" placeholder="+7(000)000-0000" class="tel">
+        <input type="text" style="width: 400px;" placeholder="Email" class="email">
+        <input type="text" style="width: 400px;" placeholder="text" class="text">
+        <button class="btn" style="width: 100px; height: 40px; background-color: coral; border-radius: 15px;">Send</button>
+    </form>
+<script>
+    let name = document.querySelector('.name').value;
+    let tel = document.querySelector('.tel').value;
+    let email = document.querySelector('.email').value;
+    let btn = document.querySelector('.btn')
+        btn.addEventListener("click",() =>{ if (name.match(/[a-z]/i) === null){
+            document.querySelector('.name').style ="outline: 2px solid crimson;width: 400px;";
+            console.log(name.match(/[a]/i))
+        }else if (tel.match(/[+7]+[/d/d/d]+[/d/d/d]+[/d/d/d/d]/) === null){
+            document.querySelector('.tel').style ="outline: 2px solid crimson;width: 400px;";
+            console.log(tel.match(/[a-z][а-я]ё/i))
+        }else if (email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) === null){
+            document.querySelector('.email').style ="outline: 2px solid crimson;width: 400px;";
+            console.log(email.match(/[a-z][а-я]ё/i))
+        }
+        else{
+            alert('спасибо');
+            console.log(name.match(/[a-z][а-я]ё/i));
+        }
+    })
+</script>
+    <!-- outline: 2px solid crimson; -->
+</body>
+</html>
