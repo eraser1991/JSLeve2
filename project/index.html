@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="app">    
     <header class="menu">
         <ul class="menu-list">
             <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
@@ -15,12 +16,30 @@
             <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
         </ul>
         <div class="cart">
-            <button class="btn-cart" type="button">Корзина</button>
-            <div class="cart-block invisible"></div>
+            <form action="#" class="search-form">
+                <input type="text" class="search-field" v-model="search">
+                <button class="btn-search" type="submit" @click="filterGoods(value)">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <button class="btn-cart" type="button" @click="show=!show">Корзина</button>
+            <div class="cart-block" v-if="show"></div>
     </header>
     <main>
-        <div class="products"></div>
+            <div class="products">
+                <div class="product-item" v-for="product of products" :key="product.id_product">
+                    <img :src="imgCatalog" alt="Some img">
+                    <div class="desc">
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}} $</p>
+                        <button class="buy-btn" @click="addProduct(product)">Купить</button>
+                    </div>
+                </div>
+            </div>
     </main>
+</div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
