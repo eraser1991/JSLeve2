@@ -1,0 +1,199 @@
+<div class = "green">Click me</div>
+<script>
+//ES-7
+//    2 **3 
+    
+//ES-8
+
+//var obj = {a:1,b:2};
+//var arr = Object.values(obj);
+//console.log(arr);
+    
+//ES-6
+//const name = "John";
+//let age = 25;
+//if(1){
+//    let age = 30;
+//    console.log(age);
+//}
+//console.log(age);
+    
+//function passTest(result){
+//    if(result){
+//        let firstName = "John";
+//        let yearOfBirthDay = 1990;
+//    }
+//    console.log(firstName + ", рожденный в "+yearOfBirthDay+" ...");
+//}
+//    passTest(1);
+    
+//let i = 23;
+//for(let i=0;i<5;i++){
+//    console.log(i);
+//}
+//console.log(i);
+    
+//Template literals
+    
+//let firstName = 'John';
+//let lastName = 'Smoth';
+//const yearOfBirth = 1990;
+//
+//function calcAge(year){
+//    return 2020 - year;
+//}
+//    
+//console.log(`${firstName}, рожденный в ${yearOfBirth}, ему ${calcAge(yearOfBirth)}`);
+//
+//const fio = `${firstName} ${lastName}`;
+//    
+//console.log(fio.startsWith('John')); 
+//console.log(fio.endsWith('th'));
+//console.log(fio.includes('oh'));  
+//console.log(fio.repeat(5));
+
+//Arrow functions    
+
+//const calcAge = () => {
+//    return 30;
+//}
+//
+////console.log(calcAge());
+//
+//const calcAge2 = x => 7 - x;
+//console.log(calcAge2(3));
+//
+//const calcAge3 = (x,y=10){
+//    let b = y;
+//    return 6 - x + b;
+//}
+//console.log(calcAge3(3,5));
+//    
+    
+//let arr = [1,2,3];
+//arr.forEach(el => {//параметр функции - каждый элемент массива
+//    console.log(el);
+//});
+//    
+////У стрелочных функций есть ещё одно важное отличие от обычных:
+//    они не создают собственного контекста и наследуют контекст родителя.
+//    Создадим объект, одно из полей которого сделаем функцией:
+//let box = {
+//    color:'green',
+//    position:1,
+//    clickMe: function(){
+//        document.querySelector(".green").addEventListener('click',function(){
+//            let str = `This is box number ${this.position} and it's color is ${this.color}`;
+//            console.log(this);
+//        });
+//    }
+//}
+//    let box = {
+//    color:'green',
+//    position:1,
+//    clickMe: function(){
+//        document.querySelector(".green").addEventListener('click',() => {
+//            let str = `This is box number ${this.position} and it's color is ${this.color}`;
+//            console.log(str);
+//        });
+//    }
+//}
+//box.clickMe();
+//    
+
+    //Деструктуризация
+//Деструктуризация позволяет извлечь части из составных данных. Таким образом синтаксис становится короче, а главное интуитивно понятнее.
+//К тому же это работает когда нас интересует только часть данных
+    
+//ES-5
+//var mas = ['John',26];
+//var name = mas[0];
+//var age = mas[1];   
+
+//    ES-6
+    
+//let mas = ['John',26];
+//let [name,age] = mas;   
+//console.log(name);
+//console.log(age);    
+
+//let obj = {
+//    firstName: 'John',
+//    lastName:'Smith',
+//    professions: ['programmer','admin']
+//}
+//
+//let {firstName:n,lastName,professions:[a,b]} = obj;
+//console.log(n);
+//console.log(lastName);
+//console.log(a);
+//console.log(b);
+    
+//let f = year => {
+//    const age = 2020 - year;
+//    return [age,65 - age];
+//}
+//
+////console.log(f(1990));
+//let [curAge,left] = f(1992);
+//console.log(curAge);
+//console.log(left);
+
+//Оператор spread используется для разделения коллекций на отдельные элементы, a rest
+//наоборот
+    
+//function restTest(a,b,...c){//упаковывает
+//    console.log(c);
+//}
+//restTest(1,2,3,4,5);   
+ 
+//SPREAD - распаковка
+
+//const values = [34,54,567,876,23,2];
+//console.log(Math.max(...values));
+
+//let calcArgs = (a,b,c,d) => a + b + c +d;
+//const arrNums = [2,3,5,7];
+
+    //ES-5
+//let sum = calcArgs.apply(null,arrNums);
+//console.log(sum);
+    
+//let sum = calcArgs(...arrNums);
+//console.log(sum);
+
+//Клонирование свойств массивов
+//let arr = ['one','two'];
+//let arr2 = ['test',...arr,'demo'];
+    
+ //Метод arr.map(func) - используется для транформации массива
+//Он создает новый массив, который будет состоять из результатов функции func(item,i,arr)
+    
+let langs = ['JS','PHP','Java'];
+let sizeLangs = langs.map((item) => item.length);
+console.log(sizeLangs);
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+</script>
