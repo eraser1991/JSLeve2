@@ -1,5 +1,5 @@
 Vue.component('cart', {
-    props: ['cartGoods', 'img', 'visibility'],
+    props: ['cart-goods', 'img', 'visibility'],
     template: `
         <div class="cart-block" v-show="visibility">
             <cart-item v-for="item of cartGoods" :key="item.id_product" :img="img" :cart-item="item">

@@ -18,7 +18,7 @@
         <div class="cart">
             <search  @search-click="filter" v-model="search"></search>
             <button class="btn-cart" type="button" @click="show=!show">Корзина</button>
-            <cart :cart-items="cartGoods"
+            <cart :cart-goods="cartGoods"
             :img="imgCart"
             :visibility="show"
             @remove="remove"></cart>
