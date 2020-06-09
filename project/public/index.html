@@ -9,12 +9,21 @@
 <body>
 <div id="app">    
     <header class="menu">
-        <ul class="menu-list">
-            <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
-            <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
-            <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
-            <li class="menu-list-item"><a href="#" class="menu-list-item-link">Button</a></li>
-        </ul>
+        <div class="wrapper">
+            <input type="checkbox" id="check-menu">
+            <label for="check-menu">Menu</label>
+            <div class="burger-line first"></div>
+            <div class="burger-line second"></div>
+            <div class="burger-line third"></div>
+            <div class="burger-line fourth"></div>
+            <nav class="main-menu">
+              <a href="#" class="menu-item">Point</a>
+              <a href="#" class="menu-item">Point</a>
+              <a href="#" class="menu-item">Point</a>
+              <a href="#" class="menu-item">Point</a>
+            </nav>
+          </div>
+          <div class="logo">E-SHOP</div>
         <div class="cart">
             <search  @search-click="filter" v-model="search"></search>
             <button class="btn-cart" type="button" @click="show=!show">Корзина</button>

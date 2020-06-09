@@ -11,7 +11,99 @@ body{
     display: flex;
     justify-content: space-between;
 }
+.wrapper {
+    width: 320px;
+    background-color:transparent;
+    position: relative;
+    color: white;
+    text-align: center;
+    height: 40px;
+    font-family: 'Arial';
+  }
+  
+  #check-menu {
+    display: none;
+  }
+  
+  label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+    line-height: 40px;
+  }
+  
+  .burger-line {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 35px;
+    height: 2px;
+    background-color: #fff;
+    transition: .5s all
+  }
+  
+  .second, .third {
+    top: 18px;
+  }
+  
+  .fourth {
+    top: 28px;
+  }
+  
+  .main-menu {
+    max-height: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    font-size: 0;
+    overflow: hidden;
+    transition: .5s all
+  }
+  
+  .menu-item {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    background-color: #808080;
+    border-radius: 15px;
+  }
+  
+  #check-menu:checked ~ .main-menu {
+    max-height: 500px;
+    font-size: 16px;
+  }
+  
+  #check-menu:checked ~ .first {
+    display: none;
+  }
+  
+  #check-menu:checked ~ .second {
+    transform: rotate(45deg);
+  }
+  
+  #check-menu:checked ~ .third {
+    transform: rotate(-45deg);
+  }
+  
+  #check-menu:checked ~ .fourth {
+    display: none;
+  }
 
+.logo{
+    color: #FFFFFF;
+    margin: 15px;
+}
 .menu-list{
     list-style: none; 
     margin: 10px 0 10px 0;
@@ -27,14 +119,6 @@ body{
     text-decoration: none;
     color:#000000;
 }
-.btn-cart{
-    width: 100px;
-    height: 30px;
-    margin: auto 40px auto 0;
-    border-radius: 5px;
-    outline: none;
-    background-color: darkgray;
-}
 
 .products{
     width: 90%;
@@ -49,6 +133,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-top: 15px;
 }
 .cart{
     position: relative;
@@ -81,9 +166,9 @@ body{
     border-bottom: 10px solid white;
 }
 
-.buy-btn, .del-btn{
+.buy-btn, .del-btn, .btn-cart{
     margin-top: 5px;
-    background-color: #2f2a2d;
+    background-color: darkgray;
     padding: 5px 15px;
     border: 1px solid transparent;
     color: #fafafa;
@@ -91,7 +176,10 @@ body{
     transition: all ease-in-out .4s;
     cursor: pointer;
 }
-.buy-btn:hover, .del-btn:hover{
+.btn-cart{
+    margin: 10px 15px 0 0 ;
+}
+.buy-btn:hover, .del-btn:hover, .btn-cart:hover{
     background-color: #fafafa;
     color: #2f2a2d;
     border: 1px solid #2f2a2d;
